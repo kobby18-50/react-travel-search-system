@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="bg-gradient-to-r from-cyan-700 pt-5">
       <div className="text-center">
-      <h1 className="text-6xl font-mono">Monster Rolledex</h1>
+      <h1 className="text-6xl font-mono">Monster Rollerdex</h1>
       <input type="search" className="p-2 my-4" placeholder="Search monster" value={searchValue} 
       onChange = {handleOnChange} />
       </div>

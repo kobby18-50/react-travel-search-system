@@ -122,11 +122,11 @@ const Home = () => {
                 World!<br/>
             </div>
 
-            <div className="text-4xl ml-10 mt-10 hidden lg:flex">
+            <div className="text-4xl ml-10 mt-10">
                 <GiAirplaneDeparture/>
             </div>            
 
-            <div className="md:hidden lg:block">
+            <div className="md:hidden sm:hidden lg:block">
                 <img src="../images/travel.jpg" alt="travel" className="w-2/4 h-full float-right" />
             </div>
             </div>
@@ -183,7 +183,7 @@ const Home = () => {
                 </div>
 
                 <div >
-                    <ul className="flex space-x-4">
+                    <ul className="flex space-x-4 sm:hidden">
                         <li onClick={() => setFilter('beach')} className = "cursor-pointer">Beach</li>
                         <li onClick={() => setFilter('mountain')} className = "cursor-pointer">Mountain</li>
                         <li onClick={() => setFilter('waterfall')} className = "cursor-pointer">Waterfall</li>
@@ -205,7 +205,7 @@ const Home = () => {
             {/* Explore sections */}
 
             <div className="mt-10">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-1 gap-4">
                     <div>
                         <img src="../images/travel.jpg" alt="travel" className="w-1/2" />
                     </div>

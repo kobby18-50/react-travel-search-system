@@ -1,43 +1,39 @@
-import { useEffect, useState } from "react";
-import CardList from "./components/card-list/CardList";
-import './search.style.css'
+import Home from "./components/Home/Home";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import TotalList from "./components/Home/TourList/TotalList";
+import About from "./components/AboutUs/About";
+import Category from "./components/Category/Category";
+import Blog from "./components/Blog/Blog";
 
 
 function App() {
-  const [monsters, setMonsters] = useState([])
-  const [searchValue, setSearchValue] = useState('')
-  // const [isLoading, setIsLoading] = useState(true)
-  
-  
-
-  useEffect(()=>{
-    fetch('https://jsonplaceholder.typicode.com/users')
-    .then(res =>{
-      return res.json()
-    })
-    .then(data => {
-      setMonsters(data)
-    })
-  },[])
-
-  // search function
-  const filteredMonsters = monsters.filter(monster => 
-    monster.name.toLowerCase().includes(searchValue.toLowerCase()))
-
-  const handleOnChange = e => setSearchValue(e.target.value)
-  
 
   return (
-    <div className="bg-gradient-to-r from-cyan-700 pt-5">
-      <div className="text-center">
-      <h1 className="text-6xl font-mono">Monster Rollerdex</h1>
-      <input type="search" className="p-2 my-4" placeholder="Search monster" value={searchValue} 
-      onChange = {handleOnChange} />
-      </div>
+    <Router>
+    <div>
+      <Switch>
+        <Route exact path={'/'}>
+          <Home/>
+        </Route>
 
-      <CardList monsters = {filteredMonsters}/> 
-      {/* <p>{searchValue}</p>      */}
+        <Route path={'/total-list'}>
+          <TotalList/>
+        </Route>
+
+        <Route path={'/category'}>
+          <Category/>
+        </Route>
+
+        <Route path={'/blog'}>
+          <Blog/>
+        </Route>
+
+        <Route path={'/about-us'}>
+          <About/>
+        </Route>
+      </Switch>
     </div>
+    </Router>
   );
 }
 

@@ -4,11 +4,21 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    screens : {
+      sm: '270px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px'
+    },
+
     extend: {
       colors : {
-        'main': '#95dada'
+        'btncolor': '#f58a4e',
+        'hcolor' : '#F57113'
       }
-    },
+    }
+
+    
   },
   plugins: [require("daisyui")
 ],

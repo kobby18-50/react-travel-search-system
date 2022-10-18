@@ -1,7 +1,7 @@
 const IceBergList = ({icebergs}) => {
     
     return ( 
-        <div className="grid grid-cols-3 md:grid-cols-1 gap-4 mt-10">
+        <div className="grid grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-4 mt-10">
         {
             icebergs.map((iceberg) => (
                 <div className="card w-96 shadow-xl" key={iceberg.id}>

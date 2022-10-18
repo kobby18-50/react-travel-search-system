@@ -3,7 +3,7 @@
 const BeachList = ({beaches}) => {
 
     return ( 
-        <div className="grid lg:grid-cols-3 md:grid-cols-1 gap-4 mt-10">
+        <div className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-4 mt-10">
             {
                 beaches.map((beach) => (
                     <div className="card w-96 shadow-xl" key={beach.id}>

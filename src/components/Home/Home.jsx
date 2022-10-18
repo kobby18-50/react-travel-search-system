@@ -177,19 +177,20 @@ const Home = () => {
             {/* End of hero */}
 
             {/* Tour details */}
-            <div className="flex ml-4 mt-10 justify-between">
+            <div className="ml-4 mt-10 grid grid-cols-2 sm:grid-cols-1">
                 <div>
                     <h1 className="text-3xl font-medium">Popular Place</h1>
                 </div>
 
                 <div >
-                    <ul className="flex space-x-4 sm:hidden">
+                    <ul className="flex space-x-4">
                         <li onClick={() => setFilter('beach')} className = "cursor-pointer">Beach</li>
                         <li onClick={() => setFilter('mountain')} className = "cursor-pointer">Mountain</li>
                         <li onClick={() => setFilter('waterfall')} className = "cursor-pointer">Waterfall</li>
                         <li onClick={() => setFilter('iceberg')} className = "cursor-pointer">Iceberg</li>
                         <li className="text-warning"><Link to={'/total-list'}>View all</Link></li>
                     </ul>
+                    
                 </div>
             </div>
 
@@ -247,7 +248,7 @@ const Home = () => {
              
             </div>
                     {/* Explore Place */}
-                    <div className="flex ml-4 mt-10 justify-between">
+                    <div className="ml-4 mt-10 grid grid-cols-2 sm:grid-cols-1">
                 <div>
                     <h1 className="text-3xl font-medium">Explore Place</h1>
                 </div>

@@ -1,7 +1,10 @@
+import Hero from "../Home/Hero";
+
 const About = () => {
     return ( 
         <div>
-            About us page
+            <Hero herosub = {'About'} herotitle = {'Us'} heromaintitle = {'Page'} />
+            
         </div>
      );
 }

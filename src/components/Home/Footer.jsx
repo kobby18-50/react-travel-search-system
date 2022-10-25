@@ -31,19 +31,19 @@ const Footer = () => {
                     <p>Copyright &copy; 2022 - All rights reserved</p>
 
                     <div className="flex space-x-4 text-xl">
-                        <Link className="text-warning"><FaFacebook/> </Link>
-                        <Link><BsTwitter/> </Link>
-                        <Link><BsInstagram/> </Link>
-                        <Link><BsLinkedin/> </Link>
+                        <Link to={'/'} className="text-warning"><FaFacebook/> </Link>
+                        <Link to={'/'}><BsTwitter/> </Link>
+                        <Link to={'/'}><BsInstagram/> </Link>
+                        <Link to={'/'}><BsLinkedin/> </Link>
                     </div>
                 </div>
 
                 <div>
                     <span className="footer-title">Quick Links</span>
                     <Link to={'/'}>Home</Link>
-                    <Link to={'/'}>Category</Link>
-                    <Link to={'/'}>Blog</Link>
-                    <Link to={'/'}>About Us</Link>
+                    <Link to={'/category'}>Category</Link>
+                    <Link to={'/blog'}>Blog</Link>
+                    <Link to={'/about-us'}>About Us</Link>
                 </div>
 
                 <div>

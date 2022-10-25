@@ -1,7 +1,9 @@
+import Hero from "../Home/Hero";
+
 const Category = () => {
     return ( 
         <div>
-            Category page
+            <Hero herosub = {'View'} herotitle = {'Our'} heromaintitle = {'Categories'} />
         </div>
      );
 }

@@ -3,13 +3,13 @@ import IceBergList from "./IceBergList";
 import MountainList from "./MountainList";
 import WaterfallList from "./WaterfallList";
 
-const TotalList = ({beaches, mountains, waterfalls, icebergs}) => {
+const TotalList = () => {
     return ( 
         <div>
-            <BeachList beaches = {beaches}/>
-            <MountainList mountains={mountains}/>
-            <WaterfallList waterfalls={waterfalls}/>
-            <IceBergList icebergs={icebergs}/>
+            <BeachList/>
+            <MountainList />
+            <WaterfallList />
+            <IceBergList />
         </div>
      );
 }

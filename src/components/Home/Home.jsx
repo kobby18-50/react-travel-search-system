@@ -1,37 +1,31 @@
-import NavBar from "./NavBar";
-import { GiAirplaneDeparture } from "react-icons/gi";
-import BeachList from "./TourList/BeachList";
 import { Link } from "react-router-dom";
-import IceBergList from "./TourList/IceBergList";
-import Footer from "./Footer";
 import { TbWorldUpload } from "react-icons/tb";
 import { AiOutlineWifi } from "react-icons/ai";
 import { FaHotel } from "react-icons/fa";
 import { MdOutlineFastfood } from "react-icons/md";
-import { useState } from "react";
-import MountainList from "./TourList/MountainList";
-import WaterFallList from "./TourList/WaterfallList"
+import Hero from "./Hero";
+import Explore from "./Explore";
 
 const Home = () => {
-    const [filter, setFilter] = useState('beach');
+    
     const beaches = [
         {
             id : 1,
             name : 'Kumasi',
-            title : 'Kobby Beach',
+            title : 'Bojo Beach',
             picture : '../images/travel.jpg'
         },
 
         {
             id : 2,
-            title : 'Kobby Beach',
+            title : 'Labadi Pleasure Beach',
             name : 'Accra',
             picture : '../images/travel.jpg'
         },
 
         {
             id : 3,
-            title : 'Kobby Beach',
+            title : 'Krokobite Beach',
             name : 'Accra',
             picture : '../images/travel.jpg'
         },
@@ -111,25 +105,10 @@ const Home = () => {
     
     return ( 
         <div className="ml-4">
-            <NavBar/>
+            {/* Navbar */}
 
             {/* Hero */}
-            <div className="flex justify-between">
-            
-            <div className="text-5xl ml-4 pt-12 font-bold">
-                Explore<br/>
-                Beautiful<br/>
-                World!<br/>
-            </div>
-
-            <div className="text-4xl ml-10 mt-10">
-                <GiAirplaneDeparture/>
-            </div>            
-
-            <div className="md:hidden sm:hidden lg:block">
-                <img src="../images/travel.jpg" alt="travel" className="w-2/4 h-full float-right" />
-            </div>
-            </div>
+            <Hero herosub = {'Explore'} herotitle = {'Beautiful'} heromaintitle = {'World!'} />
 
             <div className="form-control  w-fit ml-4 mt-4 rounded-lg shadow-lg">
                 <div className="input-group">
@@ -168,7 +147,9 @@ const Home = () => {
                             Takoradi
                         </option>
                     </select>
+                    <Link to = {'/search'}>
                     <button className="btn btn-info text-white">Search</button>
+                    </Link>
                 </div>
             </div>
 
@@ -177,38 +158,17 @@ const Home = () => {
             {/* End of hero */}
 
             {/* Tour details */}
-            <div className="ml-4 mt-10 grid grid-cols-2 sm:grid-cols-1">
-                <div>
-                    <h1 className="text-3xl font-medium">Popular Place</h1>
-                </div>
-
-                <div >
-                    <ul className="flex space-x-4">
-                        <li onClick={() => setFilter('beach')} className = "cursor-pointer">Beach</li>
-                        <li onClick={() => setFilter('mountain')} className = "cursor-pointer">Mountain</li>
-                        <li onClick={() => setFilter('waterfall')} className = "cursor-pointer">Waterfall</li>
-                        <li onClick={() => setFilter('iceberg')} className = "cursor-pointer">Iceberg</li>
-                        <li className="text-warning"><Link to={'/total-list'}>View all</Link></li>
-                    </ul>
-                    
-                </div>
-            </div>
-
-            {/* BeachList */}
-            {filter === 'beach' && (<BeachList beaches = {beaches}/>) }
-            {filter === 'mountain' && (<MountainList mountains = {mountains}/>) }
-            {filter === 'waterfall' && (<WaterFallList waterfalls = {waterfalls}/>) }
-            {filter === 'iceberg' && (<IceBergList icebergs = {icebergs}/>) }
-            
+             {/* Popular Place */}
+             <Explore beaches={beaches} icebergs = {icebergs} mountains = {mountains} waterfalls = {waterfalls} title = {'Popular Place'} />
 
             
 
             {/* Explore sections */}
 
             <div className="mt-10">
-                <div className="grid grid-cols-2 sm:grid-cols-1 gap-4">
+                <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-4">
                     <div>
-                        <img src="../images/travel.jpg" alt="travel" className="w-1/2" />
+                        <img src="../images/travelhero.jpg" alt="travel" className="w-1/2" />
                     </div>
 
                     <div>
@@ -248,27 +208,8 @@ const Home = () => {
              
             </div>
                     {/* Explore Place */}
-                    <div className="ml-4 mt-10 grid grid-cols-2 sm:grid-cols-1">
-                <div>
-                    <h1 className="text-3xl font-medium">Explore Place</h1>
-                </div>
-
-                <div >
-                    <ul className="flex space-x-4">
-                        <li onClick={() => setFilter('beach')} className = "cursor-pointer">Beach</li>
-                        <li onClick={() => setFilter('mountain')} className = "cursor-pointer">Mountain</li>
-                        <li onClick={() => setFilter('waterfall')} className = "cursor-pointer">Waterfall</li>
-                        <li onClick={() => setFilter('iceberg')} className = "cursor-pointer">Iceberg</li>
-                        <li className="text-warning"><Link to={'/total-list'}>View all</Link></li>
-                    </ul>
-                </div>
-            </div>
-
-            {/* BeachList */}
-            {filter === 'beach' && (<BeachList beaches = {beaches} className="text-warning"/>) }
-            {filter === 'mountain' && (<MountainList mountains = {mountains}/>) }
-            {filter === 'waterfall' && (<WaterFallList waterfalls = {waterfalls}/>) }
-            {filter === 'iceberg' && (<IceBergList icebergs = {icebergs}/>) }
+                    <Explore beaches={beaches} icebergs = {icebergs} mountains = {mountains} waterfalls = {waterfalls} title = {'Explore Places'} />
+                    
 
             {/*  */}
 
@@ -307,11 +248,11 @@ const Home = () => {
                 <h1 className="text-3xl font-medium">Our Gallery</h1>
                 <p className="text-md">Share Your Happy Moment</p>
 
-                <img src="../images/travel.jpg" alt="" />
+                <img src="../images/gallery1.jpg" className="h-1/2" alt="" />
             </div>
 
            {/* Footer */}
-           <Footer/>
+           
         </div>
      );
 }

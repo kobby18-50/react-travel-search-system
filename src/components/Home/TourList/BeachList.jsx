@@ -1,12 +1,13 @@
+import { BeachData } from "../../../data/BeachData";
 
-
-const BeachList = ({beaches}) => {
+const BeachList = () => {
 
     return ( 
-        <div className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-4 mt-10">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 md:gap-3 sm:grid-cols-1 lg:gap-4  mt-10">
             {
-                beaches.map((beach) => (
-                    <div className="card w-96 shadow-xl" key={beach.id}>
+                BeachData.filter((beach, index) => index < 3) 
+                .map((beach) => (
+                    <div className="card lg:w-96 w-80 shadow-xl mb-10 " key={beach.id}>
                         <figure><img src={beach.picture} alt="beach" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">{beach.title}</h2>

@@ -1,46 +1,32 @@
 import Home from "./components/Home/Home";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import TotalList from "./components/Home/TourList/TotalList";
 import About from "./components/AboutUs/About";
 import Category from "./components/Category/Category";
 import Blog from "./components/Blog/Blog";
 import NavBar from "./components/Home/NavBar";
 import Footer from "./components/Home/Footer";
+import Search from "./components/Home/Search";
 
 
 
 function App() {
 
   return (
-    <Router>
-    <div>
-        <NavBar/>
-      <Switch>
-        <Route exact path={'/'}>
-          <Home/>
-        </Route>
 
-        <Route path={'/total-list'}>
-          <TotalList/>
-        </Route>
+    <>
+      <NavBar />
+      <Routes>
+        <Route path={'/'} element={<Home />} />
+        <Route path={'/total-list'} element={<TotalList />} />
+        <Route path={'/category'} element={<Category />} />
+        <Route path={'/blog'} element={<Blog />} />
+        <Route path={'/about-us'} element={<About />} />
+        <Route path = {'/search'} element = {<Search/>} />
+      </Routes>
+      <Footer />
+    </>
 
-        <Route path={'/category'}>
-          <Category/>
-        </Route>
-
-        <Route path={'/blog'}>
-          <Blog/>
-        </Route>
-
-        <Route path={'/about-us'}>
-          <About/>
-        </Route>
-
-        
-      </Switch>
-      <Footer/>
-    </div>
-    </Router>
   );
 }
 

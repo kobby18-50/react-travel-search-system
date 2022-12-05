@@ -32,9 +32,9 @@ const Footer = () => {
 
                     <div className="flex space-x-4 text-xl">
                         <Link to={'/'} className="text-warning"><FaFacebook/> </Link>
-                        <Link to={'/'}><BsTwitter/> </Link>
-                        <Link to={'/'}><BsInstagram/> </Link>
-                        <Link to={'/'}><BsLinkedin/> </Link>
+                        <Link to={'/'} className="text-warning"><BsTwitter/> </Link>
+                        <Link to={'/'} className="text-warning"><BsInstagram/> </Link>
+                        <Link to={'/'} className="text-warning"><BsLinkedin/> </Link>
                     </div>
                 </div>
 
@@ -50,7 +50,7 @@ const Footer = () => {
                     <span className="footer-title">Quick Links</span>
                     <Link to={'/'}>FAQ's</Link>
                     <Link to={'/'}>Privacy Policy</Link>
-                    <Link to={'/'}>Term & Conditions</Link>
+                    <Link to={'/'}>Terms & Conditions</Link>
                     <Link to={'/'}>Support</Link>
                 </div>
 

@@ -147,7 +147,7 @@ const NavBar = () => {
               <div className="navbar-end">
                 <Link to = {'/search'}>
                 <button className="btn bg-btncolor border-none w-16 h-5 hover:bg-hcolor">
-                  <span className="text-white">Search Now</span>
+                  <span className="text-white text-xs">Search Now</span>
                 </button>
                 </Link>
                 {/* <button className="btn btn-ghost btn-circle">

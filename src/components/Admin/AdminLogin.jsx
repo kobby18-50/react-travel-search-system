@@ -1,12 +1,24 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from '../../api/axios'
+// import axios from '../../api/axios'
+import axios from "axios"
 
 const AdminLogin = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('')
 
   const navigate = useNavigate()
+
+  const adminLoginAuth = async() => {
+    const response = await axios.post('https://localhost:7001/Auth/login')
+    const data = response.data
+    console.log(data)
+  }
+
+  useEffect(()=>{
+    adminLoginAuth()
+  },[])
+
 
   const handleSubmit = (e) => {
     e.preventDefault()

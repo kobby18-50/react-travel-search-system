@@ -23,10 +23,10 @@ const DashBoard = () => {
   const [price, setPrice] = useState("");
 
 
-  // useEffect(() => {
-  //   fetch('https://localhost:7001/Flights')
-  //   .then((response) => console.log(response))
-  // },[])
+  useEffect(() => {
+    fetch('https://localhost:7001/Flights')
+    .then((response) => console.log(response))
+  },[])
 
   function addNewFlight (){
     const newFlight = {

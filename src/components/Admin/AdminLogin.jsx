@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from '../../api/axios'
 
 const AdminLogin = () => {
   const [name, setName] = useState('');
@@ -9,6 +10,8 @@ const AdminLogin = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
+
     navigate('/admin/dashboard')
     
   }

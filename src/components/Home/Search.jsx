@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { FlightData } from "../../data/FlightData";
-
+import {useSelector} from 'react-redux'
 const Search = () => {
-  const [flights, setFlight] = useState(FlightData);
+  const [flights, setFlight] = useState(useSelector((state)=> state.flights.flights));
   const [sorted, setSorted] = useState({ sorted: "price", reverse: false });
   const [searchValue, setSearchValue] = useState("");
 
@@ -131,6 +130,11 @@ const Search = () => {
                     <td>{flight.arrival_terminal}</td>
                     <td>{flight.seat_number}</td>
                     <td>${flight.price}</td>
+                    {/* Action Buttons */}
+                    <td className="flex">
+                      <p>Edit</p>
+                      <p>Delete</p>
+                    </td>
                   </tr>
                 ))}
             </tbody>

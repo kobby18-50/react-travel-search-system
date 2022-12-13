@@ -6,8 +6,8 @@ import {useSelector,useDispatch} from 'react-redux'
 import { flightActions } from "../../redux/FlightListSlice";
 
 const DashBoard = () => {
-  const dispatch = useDispatch()
-  const flights = useSelector((state)=> state.flights.flights)
+  // const dispatch = useDispatch()
+  // const flights = useSelector((state)=> state.flights.flights)
 
   // States
   const [flight_number, setFlightNumber] = useState("");
@@ -27,22 +27,22 @@ const DashBoard = () => {
   //   .then((response) => console.log(response))
   // },[])
 
-  function addNewFlight (){
-    const newFlight = {
-      id : flights.length+1,
-      flight_number,
-      from ,
-      to ,
-      airline ,
-      departure_date ,
-      arrival_date ,
-      arrival_terminal ,
-      departure_terminal ,
-      seat_number  ,
-      price 
-    }
-    dispatch(flightActions.addFlights(newFlight))
-  }
+  // function addNewFlight (){
+  //   const newFlight = {
+  //     id : flights.length+1,
+  //     flight_number,
+  //     from ,
+  //     to ,
+  //     airline ,
+  //     departure_date ,
+  //     arrival_date ,
+  //     arrival_terminal ,
+  //     departure_terminal ,
+  //     seat_number  ,
+  //     price 
+  //   }
+  //   dispatch(flightActions.addFlights(newFlight))
+  // }
 
 
 
@@ -60,7 +60,7 @@ const DashBoard = () => {
     //   seat_number,
     //   price
     // );
-    addNewFlight()
+    // addNewFlight()
   };
 
   return (

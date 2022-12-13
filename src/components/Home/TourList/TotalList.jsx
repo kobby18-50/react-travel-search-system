@@ -7,7 +7,7 @@ const TotalList = () => {
   return (
     <div className="pl-[20px]">
       <div className="lg:text-4xl sm:text-2xl md:text-3xl lg:text-center ml-4 pt-12 font-bold">
-        BeachList
+        Beaches
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 md:gap-3 lg:gap-4 mt-10">
             {
@@ -23,7 +23,7 @@ const TotalList = () => {
             }
             </div>
       <div className="lg:text-4xl sm:text-2xl md:text-3xl lg:text-center ml-4 pt-12 font-bold">
-        MountainList
+        Mountains
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 md:gap-3 sm:grid-cols-1 lg:gap-4 mt-10">
             {
@@ -39,7 +39,7 @@ const TotalList = () => {
             }
             </div>
       <div className="lg:text-4xl sm:text-2xl md:text-3xl lg:text-center ml-4 pt-12 font-bold">
-        WaterFallList
+        WaterFalls
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 md:gap-3 sm:grid-cols-1 lg:gap-4 mt-10">
             {
@@ -55,7 +55,7 @@ const TotalList = () => {
             }
             </div>
       <div className="lg:text-4xl sm:text-2xl md:text-3xl lg:text-center ml-4 pt-12 font-bold">
-        IceBergList
+        IceBergs
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 md:gap-3 sm:grid-cols-1 lg:gap-4 mt-10">
         {

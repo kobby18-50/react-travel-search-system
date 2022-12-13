@@ -7,6 +7,9 @@ import Blog from "./components/Blog/Blog";
 import NavBar from "./components/Home/NavBar";
 import Footer from "./components/Home/Footer";
 import Search from "./components/Home/Search";
+import AdminLogin from "./components/Admin/AdminLogin";
+import DashBoard from "./components/Admin/Dashboard";
+import Flights from "./components/Admin/Flights";
 
 
 
@@ -23,6 +26,12 @@ function App() {
         <Route path={'/blog'} element={<Blog />} />
         <Route path={'/about-us'} element={<About />} />
         <Route path = {'/search'} element = {<Search/>} />
+
+        <Route path="/admin">
+          <Route path="admin-login" element = {<AdminLogin/>} />
+          <Route path = "dashboard" element = {<DashBoard/>} />
+          <Route path="flights" element = {<Flights/>} />
+        </Route>
       </Routes>
       <Footer />
     </>

@@ -1,5 +1,7 @@
 import { FlightData } from "../../data/FlightData";
+import {useSelector} from 'react-redux'
 const Flights = () => {
+  const flights = useSelector((state)=> state.flights.flights)
     return ( 
         <main>
             <div className="overflow-x-auto mt-5">
@@ -25,8 +27,7 @@ const Flights = () => {
 
             {/* <tbody>{renderFlights()}</tbody> */}
             <tbody>
-
-              {FlightData.map((flight, index) => (
+              {flights.map((flight, index) => (
                   <tr key={index}>
                     <th>{flight.id}</th>
                     <td>{flight.flight_number}</td>
@@ -36,7 +37,6 @@ const Flights = () => {
                     <td>{flight.departure_date}</td>
 
                     <td>{flight.departure_terminal}</td>
-                    <td>{flight.arrival_date}</td>
 
                     <td>{flight.arrival_terminal}</td>
                     <td>{flight.seat_number}</td>

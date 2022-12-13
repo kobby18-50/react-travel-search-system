@@ -5,9 +5,11 @@ const flightSlice = createSlice({
     name:'flights',
     initialState:{
         // List of Flights
-        flights:FlightData
+        flights:[
+            
+        ]
     },
-    reducer:{
+    reducers:{
         setFlights(state,{payload}){
             // Set List of Flights
         },

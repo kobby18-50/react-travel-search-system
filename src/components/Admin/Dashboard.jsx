@@ -8,15 +8,14 @@ import { flightActions } from "../../redux/FlightListSlice";
 const DashBoard = () => {
   const dispatch = useDispatch()
   const flights = useSelector((state)=> state.flights.flights)
-  console.log(flights)
 
   // States
   const [flight_number, setFlightNumber] = useState("");
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
   const [airline, setAirline] = useState("");
-  const [departure_date, setDepartureDate] = useState(new Date());
-  const [arrival_date, setArrivalDate] = useState(new Date());
+  const [departure_date, setDepartureDate] = useState('');
+  const [arrival_date, setArrivalDate] = useState('');
   const [arrival_terminal, setArrivalTerminal] = useState("");
   const [departure_terminal, setDepartureTerminal] = useState("");
   const [seat_number, setSeatNumber] = useState("");
@@ -119,29 +118,31 @@ const DashBoard = () => {
           <div className="mb-3">
             <label className="font-normal text-sm">Departure Date</label>
             <br />
-            <DatePicker
+            {/* <DatePicker
               selected={departure_date}
-              onChange={(date) => setDepartureDate(date)}
+              onChange={(e) => setDepartureDate(e.target.value)}
               timeInputLabel="Time:"
               dateFormat="MM/dd/yyyy h:mm aa"
               showTimeInput
               className="outline-none border-2 border-input-color rounded-lg h-[45.47px] w-[300px] lg:w-[300px] p-2 focus:border-black"
               required
-            />
+            /> */}
+            <input type="date" value={departure_date} onChange={(e) => setDepartureDate(e.target.value)} />
           </div>
 
           <div className="mb-3">
             <label className="font-normal text-sm">Arrival Date</label>
             <br />
-            <DatePicker
-              onChange={(date) => setArrivalDate(date)}
+            {/* <DatePicker
+              onChange={(e) => setArrivalDate(e.target.value)}
               selected={arrival_date}
               timeInputLabel="Time:"
               dateFormat="MM/dd/yyyy h:mm aa"
               showTimeInput
               className="outline-none border-2 border-input-color rounded-lg h-[45.47px] w-[300px] lg:w-[300px] p-2 focus:border-black"
               required
-            />
+            /> */}
+             <input type="date" value={arrival_date} onChange={(e) => setArrivalDate(e.target.value)} />
           </div>
 
           <div className="mb-3">
